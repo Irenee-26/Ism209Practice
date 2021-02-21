@@ -1,0 +1,9 @@
+.content-with-background-color{
+    min-height: 180px;
+    background color: yellow;
+    font-size: 1.8em;
+    border:1px solid #000000;
+    padding: 10px 15px 10px 20px;
+    font-color: #000000;
+    font-align: center;
+}

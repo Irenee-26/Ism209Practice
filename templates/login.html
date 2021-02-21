@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+{% block body %}
+    <div class="grid-container">
+        <div class="navigation-bar grid-item-row-1">
+            <div class="navigation-bar-left">
+                <div>
+                    <a href="/" >Home</a>
+                </div>
+            </div>
+            <div class="navigation-bar-right">
+
+                <div>
+                    <a href="/login/" class="active">Sign in</a>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item-row-2">
+            <h2 class="signup-title">{{title}}: {{information}}</h2>
+            <form method="post" action="/process-login/">
+                <div class="form-grid">
+                    <label>First Name: </label><input type="text" name="firstname" required maxlength="20">
+                    <label>SurName: </label><input type="text" name="surname" required maxlength="20">
+                    <label>National Identification Number: </label><input type="number" name="nationalidentificationnumber"
+                    &nbsp;<input type="submit" value="Login" class="button">
+                    <label>&nbsp;</label><label>&nbsp;</label>
+                    <label>Not yet a user? </label> <a href="/signup">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock%}

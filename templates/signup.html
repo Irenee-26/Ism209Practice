@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="grid-container">
+        <div class="navigation-bar grid-item-row-1">
+            <div class="navigation-bar-left">
+                <div>
+                    <a href="/" >Home</a>
+                </div>
+            </div>
+            <div class="navigation-bar-right">
+                <div>
+                    {% if 'username' in session %}
+                        <a href="/logout/">Sign out</a>
+                    {% else %}
+                        <a href="/login/">Sign in</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="grid-item-row-2">
+            <h2 class="signup-title">{{title}}: {{information}}</h2>
+            <form method="post" action="/process-signup/">
+                <div class="form-grid">
+                     <label>First Name: </label><input type="text" name="firstname" required maxlength="20">
+                     <label>SurName: </label><input type="text" name="surname" required maxlength="20">
+                     <label>DateOfBirth: </label><input type="date" name="dateofbirth" maxlength="20">
+                     <label>Residental address: </label><input type="text" name="residentaladdress" required maxlength="50">
+                     <label>Nationality: </label><input type="text" name="nationality" required maxlength="50">
+                     <label>National Identification Number: </label><input type="number" name="nationalidentificationnumber" required maxlength="50">
+                     &nbsp;<input type="submit" value="Submit" class="button">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock%}
